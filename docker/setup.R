@@ -9,16 +9,18 @@ cran_packages <- c(
     "lattice",
     "latticeExtra",
     "reshape2",
-    "rmarkdown",
     "readr",
-    "tidyr"
+    "tidyr",
+    "devtools"
 )
 
 install.packages(
     cran_packages,
     repos="http://cran.us.r-project.org",
     Ncpus=ncores,
-    clean=TRUE)
+    clean=TRUE
+)
+
 
 bioc_packages <- c(
     "devtools",
@@ -35,3 +37,11 @@ biocLite(
 
 dada2_version = '553008d286895af90e9d0a734c7210c1bc597b8c' ## version 1.6
 devtools::install_github("benjjneb/dada2", ref=dada2_version)
+devtools::install_github("benjjneb/decontam")
+devtools::install_version(
+    "rmarkdown",
+    version=1.8,
+    repos="http://cran.us.r-project.org",
+    Ncpus=ncores,
+    clean=TRUE
+)
